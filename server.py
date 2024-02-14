@@ -5,7 +5,7 @@ import pip
 
 
 
-def install_and_import(package):
+def install_and_import(package, alias=None):
     import importlib
     try:
         importlib.import_module(package)
@@ -13,9 +13,12 @@ def install_and_import(package):
         import pip
         pip.main(['install', package])
     finally:
-        globals()[package] = importlib.import_module(package)
+        if alias:
+            globals()[alias] = importlib.import_module(package)
+        else:
+            globals()[package] = importlib.import_module(package)
 
-install_and_import("pyautogui")
+install_and_import("pyautogui", p)
 
 a = p.alert
 w = p.write
