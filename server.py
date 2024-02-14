@@ -2,8 +2,12 @@ import socket
 from time import sleep as s
 import os
 import pip
+import sys
 
 
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, *sys.argv)
 
 def install_and_import(package, alias=None):
     import importlib
@@ -17,8 +21,11 @@ def install_and_import(package, alias=None):
             globals()[alias] = importlib.import_module(package)
         else:
             globals()[package] = importlib.import_module(package)
-
-install_and_import("pyautogui", p)
+try:
+    install_and_import("pyautogui", p)
+except:
+    restart_program()
+    sys.exit()
 
 a = p.alert
 w = p.write
