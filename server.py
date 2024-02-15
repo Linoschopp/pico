@@ -22,9 +22,10 @@ def install_and_import(package, alias=None):
         else:
             globals()[package] = importlib.import_module(package)
 try:
-    install_and_import("pyautogui", "p")
+    import pyautogui as p
 except:
-    restart_program()
+    pip.main(["install", "pyautogui"])
+    import s
     sys.exit()
 
 a = p.alert
