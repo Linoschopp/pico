@@ -4,7 +4,7 @@ import time
 import os
 import pip
 import sys
-import pyautoguu as p
+import pyautogui as p
 import pyautogui
 
 def ducky(duckyScript):
