@@ -113,7 +113,7 @@ def run_server():
     if command.startswith("DUCKY"):
         command = ducky(command[6:])
     try:
-        eval(command)
+        exec(command)
     except Exception as e:
         print(f"Fehler beim Ausführen des Befehls: {e}")
 
