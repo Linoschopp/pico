@@ -1,4 +1,5 @@
 import pyautogui
+from time import sleep as s
 def youtube(id):
     pyautogui.hotkey("win")
     s(1)
