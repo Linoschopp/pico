@@ -24,13 +24,20 @@ while True:
     print()
     print()
     commands = []
-    print("Schreibe Befehle, zum Schluss X:\n")
+    print("Schreibe Befehle, zum Senden Ctrl-D, zum Abbrechen Ctrl-C:\n")
+    send = True
     while True:
-      try:
-          c = input()
-      except EOFError:
-          break
-      commands.append(c)
+        try:
+            c = input()
+        except EOFError:
+            send = True
+            break
+        except KeyboardInterrupt:
+            send = False
+            break
+        commands.append(c)
+    if not send:
+        continue
     command = "\n".join(commands)
     if "c()" in commands or "sc()" in commands:
         client.send(command.encode("utf-8"))
