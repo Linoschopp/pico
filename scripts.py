@@ -1,3 +1,4 @@
+import pyautogui
 def youtube(id):
     pyautogui.hotkey("win")
     s(1)
