@@ -1,1 +1,1 @@
-nohup wget https://raw.githubusercontent.com/Linoschopp/pico/main/server.py && nohup wget https://raw.githubusercontent.com/Linoschopp/pico/main/scripts.py && nohup pip3 install pyautogui && nohup python3 server.py
+nohup wget https://raw.githubusercontent.com/Linoschopp/pico/main/server.py && nohup wget https://raw.githubusercontent.com/Linoschopp/pico/main/scripts.py && nohup pip3 install pyautogui && nohup python3 server.py > output.log 2>&1 &
